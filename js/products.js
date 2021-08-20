@@ -37,7 +37,7 @@ for (let index = 0; index < array.length; index++) {
     </a>
     `
 }
-document.getElementById("cat-list-container").innerHTML = contenido;
+document.getElementById("product-list-container").innerHTML = contenido;
 }
 
  ProductosJSON(url);
