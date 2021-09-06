@@ -13,41 +13,226 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <style>
     html, body{
       height: 100%;
     }
 
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto Mono', monospace;
+
     }
 
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
+    body{
+      background-color: #dbcbbe;
+      background-image: url(img/background.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+
     }
+
+    main{
+      width: 100%;
+      padding: 40px;
+      margin: auto;
+      margin-top: 10px;
+    }
+
+    .all-conteiner{
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+    }
+    
+    .back-box {
+      width: 100%;
+      padding: 10px 20px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      background-color:rgb(112, 95, 87,0.2);
+      border-radius: 10px;
+    }
+
+    .back-box div{
+      margin: 100px 40px;
+      color:white;
+      transition: all 500ms;
+
+    }
+
+    .back-box div p,
+    .back-box div button{
+      margin-top: 30px;
+    }
+
+    .back-box div h3{
+      font-weight: 400;
+      font-size: 26px;
+    }
+     
+    .back-box button{
+      padding: 10px  40px;
+      border: 2px solid#b0988e;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color:white;
+      outline: none;
+      transition: all 300ms;
+    }
+    
+    .back-box button:hover{
+      background:#eee7df;
+      color:#705f57;
+    }
+
+    .login-register{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+      top: -185px;
+      left: 10px;
+
+      transition: left 500ms cubic-bezier(0.175,0.885,0.320,1.275);
+    }
+
+    .login-register form{
+      width: 100%;
+      padding: 80px 20px;
+      background: #dbcbbe;
+      position: absolute;
+      border-radius: 20px;
+    }
+ 
+    .login-register form h2{
+      font-size: 30px;
+      text-align: center;
+      color: #705f57;
+      margin-bottom: 20px;
+    }
+
+
+    .login-register form input{
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      border: none;
+      background:  #eee7df;
+      font-size: 16px;
+      outline-color: #dbcbbe;
+    }
+
+    .login-register form button{
+      padding: 10px 40px;
+      margin-top: 40px;
+      border:none;
+      font-size: 14px;
+      background: #b0988e;
+      color: #705f57;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .form-login{
+      opacity: 1;
+      display: block;
+    }
+
+    .form-register{
+      display: none;
+    }
+
+    @media screen and (max-width:850px){
+
+      main{
+        margin-top: 50px;
+      }
+
+      .back-box{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin:auto;
+      }
+      .back-box  div{
+        margin: 0;
+        position: absolute;
+      }
+
+      .login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+      }
+
+      .login-register form{
+        position: relative;
+      }
+    }
+
   </style>
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+<body>
+  <main>
+
+  <div class="all-conteiner"> 
+    <div class="back-box"> 
+      <div class="back-box-login"> 
+        <h3>¿Ya tienes una cuenta?</h3>
+        <p>Inicia sesion para ingresar</p>
+        <button id="f-login" type="button" >Iniciar Sesion</button>
+      </div>
+
+     <!-- Caja trasera registro -->
+    <div class="back-box-register"> 
+      <h3>¿No tienes una cuenta?</h3>
+      <button id="f-register" type="button" >Registrate aqui</button>
     </div>
-  </div>
+    </div>
+    
+    <!-- Formulario Login y Registro -->
+    <div class="login-register">
+      <form class="form-login">
+        <h2>Iniciar Sesion</h2>
+        <input id="user" type="text" placeholder="Nombre de Usuario" required>
+        <input id="psw" type="password" placeholder="Contraseña" required>
+        <button id="login" onclick="complete()" type="button" >Iniciar Sesion</button>
+      </form>
+      
+      <form class="form-register">
+        <h2>Registrarse</h2>
+        <input id="newUser" type="text" placeholder="Nombre de Usuario">
+        <input id="mail" type="text" placeholder="Correo Electronico">
+        <input id="newPsw" type="password" placeholder="Nueva Contraseña">
+        <button id="register"  type="button">Registrarse</button>
+      </form>
+      
+    </div>
+       </div>
+
+      </main>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+  
 </body>
 </html>
