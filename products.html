@@ -14,13 +14,14 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
+    <nav class="navbar navbar-light" style="background-color:#b0988e;">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <a id="show" class="py-2 d-none d-md-inline-block" href="#"></a>
       </div>
     </nav>
     
@@ -30,24 +31,50 @@
           <h2>Productos</h2>
           <p class="lead">Verás aquí todos los productos del sitio.</p>
       </div>
+
       <div class="container">
-          <div class="row">
-              <div class="col text-right">
-                  <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                      <label class="btn btn-light active" id="sortAsc" >
-                          <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-sort-amount-up mr-1"></i>$
-                      </label>
-                      <label class="btn btn-light" id="sortDesc" >
-                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>$
-                      </label>
-                      <label class="btn btn-light" id="sortByCount" >
-                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Relevancia
-                      </label>
-                      <div class="box">
-                        <div class="container-1">
-                            <span class="icon"><i class="fa fa-search"></i></span>
-                            <input type="search" id="search" placeholder="Buscar..." />
-                        </div>
+        <div class="row">
+            <div class="col text-right">
+              
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <label class="navbar navbar-expand-lg navbar-light bg-light" id="sortByCount" >
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Relevancia</a>
+                  </label>
+                 
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                   
+                    <label id="sortDesc" >
+                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="#">Mayor Precio</a>
+                      </li>
+                      </ul> 
+                    </label>
+                    
+                    <label  id="sortAsc" >
+                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Menor Precio<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">E-commerce</a>
+                        </li>
+                      </ul> 
+                    </label>
+                  
+                 
+                  
+                  <form class="form-inline my-2 my-lg-0">
+                        <input id="search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscador</button>
+                      </form>
+                    </div>
+                    </nav>
+                                      
+                        
                       </div>
                   </div>
               </div>

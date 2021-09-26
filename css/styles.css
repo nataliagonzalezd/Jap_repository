@@ -1,3 +1,33 @@
+/* Score*/
+input[name="point"] {
+  display: none;
+}
+
+.clasificacion label {
+  color: #705f57;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  margin-bottom: 0 !important;
+}
+
+.clasificacion label:hover,
+.clasificacion label:hover~label {
+  color: #adb5bd;
+}
+
+input[name="point"]:checked~label {
+  color: #adb5bd;
+}
+
+.margin-point>span:first-child {
+  margin-left: 15px;
+}
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
@@ -6,13 +36,14 @@
     font-weight: bold;
 }
 
+
+
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
-  background-size: cover;
+  background: url(../img/back.jpg);
+  background-size:650px;
   background-position: center;
   background-repeat: no-repeat;
   color: black;
@@ -21,6 +52,7 @@
 
 @media (min-width: 768px) {
   .jumbotron {
+    background-color: #eee7df;
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
@@ -48,6 +80,7 @@
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  background-color: #eee7df;
 }
 
 footer p {
@@ -141,4 +174,9 @@ a.custom-card:hover {
   color: orange;
 }
 
- 
+a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
+
