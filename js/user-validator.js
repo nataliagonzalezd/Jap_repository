@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",function(e){
     function showUserName(){
         let showUser = document.getElementById("show");
         let dataName = localStorage.getItem("usuario");
-        showUser.innerHTML = "Hola" +" "+ dataName;
+        showUser.innerHTML = dataName;
      }
 
      showUserName();

@@ -13,6 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
 </head>
 
 <body>
@@ -22,17 +23,24 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+      <button id="show" class="btn btn-secondary dropdown-toggle" type="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <a class="dropdown-item" type="button" href="cart.html">Ver mi carrito</a>
+        <a class="dropdown-item" type="button" href="my-profile.html">Mi perfil</a>
+        <a class="dropdown-item" type="button" onclick="logout()" href="login.html">Cerrar sesión</a>
+      </div>
     </div>
   </nav>
   <main role="main">
-    <div class="container mt-5">
+    <div class="container mt-5"></div>
       <div class="text-center p-4">
         <h2>Descripción de Producto</h2>
         <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
         <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
           seleccionado previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
 
+          <div class="row">
            <div class="col-7" >
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -42,6 +50,7 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
+            
             <div id="showProductInfo" class="carousel-inner">
               <div class="carousel-item active">
                 <img class="d-block w-100" src="img/prod1.jpg" alt="First slide">
@@ -69,6 +78,7 @@
             </a>
           </div>
         </div>
+      
 
         <div class="col-5">
         <h3 id="productName"></h3>
@@ -93,16 +103,24 @@
           <p id="soldcount"></p>
         </dd>
 
+        </div>
+      </div>
+
+
+      
         <h3>Productos relacionados</h3>
         <div class="container pt-2">
           <div class="row" id="productRelated"></div>
         </div>
+
+        
 
         <h3>Comentarios</h3>
         <div class="container pt-2">
           <div class="row" id="coments"></div>
         </div>
       </div>
+      
 
       <p><strong>Calificación</strong></p>
       <p class="clasificacion">
@@ -158,6 +176,7 @@
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
   <script src="js/user-validator.js"></script>
+  <script src="js/login.js"></script>
 </body>
 
 </html>

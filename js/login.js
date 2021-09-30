@@ -97,3 +97,8 @@ document.addEventListener("DOMContentLoaded", function(e){
       }
            
     }
+
+    function logout(){
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("contraseña");
+    }

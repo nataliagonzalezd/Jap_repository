@@ -11,6 +11,7 @@ function showproducts(array){
       let relatedProduct = productArray[data];
       
       htmlContentToAppend += `
+      
 			<div class="card mr-3" style="width: 18rem;">
   					<img src="${relatedProduct.imgSrc}" class="card-img-top">
   				<div class="card-body">
@@ -101,5 +102,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             sendComments(commentArray);
         }
     });
+
+
     
 });
