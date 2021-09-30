@@ -11,7 +11,6 @@ function showproducts(array){
       let relatedProduct = productArray[data];
       
       htmlContentToAppend += `
-      
 			<div class="card mr-3" style="width: 18rem;">
   					<img src="${relatedProduct.imgSrc}" class="card-img-top">
   				<div class="card-body">
@@ -51,7 +50,7 @@ function sendComments(array){
         </div>
     </div>
         `
-        document.getElementById("coments").innerHTML = htmlContentToAppend;
+        document.getElementById("comments").innerHTML = htmlContentToAppend;
     }
 }
 
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             var description = document.getElementById("productDescription");
             var productCost = document.getElementById("productCost");
             var category = document.getElementById("category");
-            var soldCount = document.getElementById("soldcount")
+            var soldCount = document.getElementById("soldcount");
             
             name.innerHTML = infoProduct.name;
             description.innerHTML = infoProduct.description;
@@ -103,6 +102,42 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
-
     
 });
+
+function newComment(){
+	let comment = document.getElementById("newComment").value;
+	let newComment = document.getElementById("newComment");
+	let valueScore = document.getElementsByName("scores");
+	let dataName = localStorage.getItem("usuario");
+	let newCommentData = {
+		"description": comment,
+		"user": dataName,
+		"dateTime": date()
+	};
+
+    for (let value of valueScore) {
+		if (value.checked) {
+			newCommentData.score = value.value;
+		}
+	}
+
+	commentArray.push(newCommentData);
+	sendComments(commentArray);
+}
+
+function date() {
+	let date = new Date();
+
+	if ((date.getMonth() + 1) < 10) {
+		var month = "0" + (date.getMonth() + 1);
+	};
+	if (date.getDate() < 32) {
+		var day = "" + date.getDate();
+	};
+	var fullDate = date.getFullYear() + '-' + month + '-' + day;
+	var hour = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+	var datadate = fullDate + ' ' + hour;
+
+	return datadate;
+}

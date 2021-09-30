@@ -13,7 +13,6 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
 </head>
 
 <body>
@@ -114,10 +113,10 @@
         </div>
 
         
-
+        <hr class="my-5">
         <h3>Comentarios</h3>
         <div class="container pt-2">
-          <div class="row" id="coments"></div>
+          <div class="row" id="comments"></div>
         </div>
       </div>
       
@@ -141,12 +140,12 @@
         <label for="radio5">★</label>
       </p>
      <div class="col-md-12 mb-3">
-      <textarea rows="3"  class="form-control mt-3"> 
+      <textarea rows="3"  class="form-control mt-3" id="newComment"> 
       </textarea>
      </div> 
 
 
-<button type="button" class="btn btn-light btn-block">Comentar</button>
+<button type="button" class="btn btn-light btn-block" id="newComment" onclick="newComment()">Comentar</button>
 
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
