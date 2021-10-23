@@ -66,14 +66,16 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
     document.getElementById("register").addEventListener("click", function(){
+    let name = document.getElementById("name").value;
     let newUser = document.getElementById("newUser").value;
     let newPsw = document.getElementById("newPsw").value;
     let mail = document.getElementById("mail").value;
-    if((mail.trim() != "") ||  (newUser.trim() != "") || (newPsw.trim() != "")){
+    if((mail.trim() != "") ||  (newUser.trim() != "") || (newPsw.trim() != "" || (name.trim() != ""))){
+        localStorage.setItem("Nombre Completo", name);
         localStorage.setItem("Nuevo usuario", newUser);
         localStorage.setItem("Nueva contraseña", newPsw);
         localStorage.setItem("Email", mail);
-        if ((localStorage.getItem("Nuevo usuario") != "") && (localStorage.getItem("Nueva contraseña") != "") && (localStorage.getItem("Email") != "")){
+        if (((localStorage.getItem("Nombre Completo") != "") && localStorage.getItem("Nuevo usuario") != "") && (localStorage.getItem("Nueva contraseña") != "") && (localStorage.getItem("Email") != "")){
                  alert("Se ha registrado exitosamente, por favor, inicie sesion");
                   }else{
                      alert("Por favor, complete los campos requeridos");

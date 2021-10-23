@@ -15,5 +15,21 @@ document.addEventListener("DOMContentLoaded",function(e){
      }
 
      showUserName();
+
+     function showMail(){
+         let showMail = document.getElementById("mail");
+         let mail = localStorage.getItem("Email");
+         showMail.innerHTML = mail;
+     }
+
+     showMail();
+
+     function showName(){
+         let showName = document.getElementById("name");
+         let name = localStorage.getItem("Nombre Completo");
+         showName.innerHTML= name;
+     }
+
+     showName();
 });
 

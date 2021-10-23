@@ -27,6 +27,72 @@
         font-size: 3.5rem;
       }
     }
+
+    footer .powered-by {
+  margin-top: 8px;
+}
+
+footer ul.payment {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+footer ul.payment li {
+  display: inline-block;
+  float: none;
+}
+
+footer ul.payment li span {
+  display: block;
+  border: 1px solid #e1e1e1;
+  width: 50px;
+  height: 30px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+}
+
+footer ul.payment li span img {
+  max-width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+footer ul.payment li span::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  position: absolute;
+  z-index: 0;
+  transform: rotate(60deg);
+  top: -76px;
+  left: -50px;
+  border: 1px solid #eee;
+}
+
+@media (max-width: 767px) {
+  footer .powered-by {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  footer ul.payment {
+    text-align: center;
+    margin: 10px 0;
+    padding: 0;
+  }
+}
+
+table img{
+  width: 180px;
+}
+
+input{
+  width:45px;
+}
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -49,13 +115,161 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <hr class="mb-6">
+        <h1 class="page-header">Mi carrito</h1>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <form id="cart-update-form" method="post" action="/cart/update">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th class="mob-hide">Imagen</th>
+                  <th class="mob-hide">Precio Unitario</th>
+                  <th class="table-qty">Cantidad</th>
+                  <th>Subtotal</th>
+                  <th class="mob-hide"></th>
+                </tr>
+              </thead>
+              <tbody id="cartProducts">
+              </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
+
+            
+
+<td class="text-right">
+  <a href="" class="cart-product-remove" title="eliminar">
+    <i class="fas fa-times-circle"></i>
+  </a>
+</td>
+</tr>
+</tbody>
+</table>
+<input type="hidden">
+</form>
+<hr class="mb-4">
+<h5>Tipo de Envio</h5>
+<div class="d-block my-3">
+<div class="custom-control custom-radio"> 
+<input onchange="shipping()"  id="premium" name="shipType" class="custom-control-input" type="radio"  required>
+<label class="custom-control-label" for="premium">
+Premium 2-5 días (15%)
+</label>
+</div>
+<div class="custom-control custom-radio"> 
+<input onchange="shipping()"   id="express" name="shipType" class="custom-control-input" type="radio"  required>
+<label class="custom-control-label" for="express">
+Express 5-8 días (7%)
+</label>
+</div>
+<div class="custom-control custom-radio"> 
+<input onchange="shipping()"  id="standard" name="shipType" class="custom-control-input" type="radio" required>
+<label class="custom-control-label" for="standard">
+Standard 12-15 días (5%)
+</label>
+</div>
+<div class="row">
+<button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal"> Ver Condiciones </button>
+</div>
+</div>
+
+<div class="col-lg-4 mb-4">
+<div class="row">
+<div class="col-sm-12 col-md-12 cart-estimate">
+<div class="card mb-3">
+ <div class="card-header">
+  <h2 class="card-title"> Direccion de Envio</h2>
+  <div class="row">
+    <div class="col-6">
+      <label for="direccion">Calle</label>
+      <input style="width: 150px;" type="text">
+    </div>
+    <div class="col-3">
+      <label for="direccion">Numero</label>
+      <input  style="width: 100px;" type="text">
+    </div>
+    <div class="col-6 mt-3">
+      <label for="direccion">Esquina</label>
+      <input style="width: 150px;" type="text">
+    </div>
+    <div class="col-3 mt-3">
+      <label for="direccion">Pais</label>
+      <input style="width: 150px;" type="text">
+    </div>
+  </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-12 cart-totals">
+<table class="table table-striped">
+<tbody>
+<tr class="totals">
+ <td colspan="1" class="text-left">Costo de Envio</td>
+ <td id="envio" colspan="1" class="text-right"></td>
+</tr>
+<tr class="totals">
+  <td colspan="1" class="text-left">Subtotal</td>
+  <td id="sub" colspan="1" class="text-right"></td>
+ </tr>
+<tr class="totals key">
+<td colspan="1" class="text-left">
+  <span>Total</span>
+</td>
+<td id="total" colspan="1" class="text-right">
+  <strong></strong>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  <div class="text-center cart-actions">
+    <a href="" class="btn btn-primary btn-block" title="Proceed to Checkout" data-for="at-external-link"> Finalizar Compra </a>
+    <a href="products.html" class="btn btn-link btn-block" title="← Continue Shopping"> Continuar Comprando </a>
+  </div>
+</div>
+</div>
+
+<hr>
+<div class="container">
+<footer>
+ <div class="row"> 
+   <div class="col-12 col-md-6 order-1 order-md-2">
+    <ul class="payment">
+      <li>
+        <span>
+          <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-visa.png?1619113824" alt="visa">
+        </span>
+      </li>
+      <li>
+        <span>
+          <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-master.png?1619113824" alt="mastercard">
+        </span>
+      </li>
+      <li>
+       <span>
+         <img src="https://assets.jumpseller.com/store/bootstrap/themes/382017/pay-paypal.png?1619113824" alt="paypal">
+       </span>
+     </li>
+    </ul>
+   </div>
+ </div>
+</footer>
+</div>
+
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
