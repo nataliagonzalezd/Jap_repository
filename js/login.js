@@ -1,3 +1,4 @@
+let perfil = {};
 var login_register= document.querySelector(".login-register")
 var form_register= document.querySelector(".form-register")
 var form_login= document.querySelector(".form-login")
@@ -65,42 +66,59 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 
-    document.getElementById("register").addEventListener("click", function(){
-    let name = document.getElementById("name").value;
-    let newUser = document.getElementById("newUser").value;
-    let newPsw = document.getElementById("newPsw").value;
-    let mail = document.getElementById("mail").value;
-    if((mail.trim() != "") ||  (newUser.trim() != "") || (newPsw.trim() != "" || (name.trim() != ""))){
-        localStorage.setItem("Nombre Completo", name);
-        localStorage.setItem("Nuevo usuario", newUser);
-        localStorage.setItem("Nueva contraseña", newPsw);
-        localStorage.setItem("Email", mail);
-        if (((localStorage.getItem("Nombre Completo") != "") && localStorage.getItem("Nuevo usuario") != "") && (localStorage.getItem("Nueva contraseña") != "") && (localStorage.getItem("Email") != "")){
-                 alert("Se ha registrado exitosamente, por favor, inicie sesion");
-                  }else{
-                     alert("Por favor, complete los campos requeridos");
-                 }
-    }
-});
-
-    function complete(){
+      function registro(){
         
-        let userName = document.getElementById("user").value;
-        let psw = document.getElementById("psw").value;
-        if((userName.trim() != "") ||  (psw.trim() != "")){
-            localStorage.setItem("usuario", userName);
-            localStorage.setItem("contraseña", psw);}
-    
-      if(localStorage.getItem("Nuevo usuario")===localStorage.getItem("usuario") & (localStorage.getItem("contraseña")===localStorage.getItem("Nueva contraseña"))){
-          window.location = "index.html";
-      }else{ window.location = "login.html";
-      alert("El nombre de usuario o contrasena son incorrectos");
-      localStorage.removeItem("contraseña") & localStorage.removeItem("usuario")
-      }
-           
-    }
+        perfil.nombre = document.getElementById('name').value;
+        perfil.nuevoUsuario = document.getElementById("newUser").value;
+        perfil.email = document.getElementById("mail").value;
+        perfil.nuevaContraseña= document.getElementById("newPsw").value;
 
+        if(((perfil.nombre.trim() != "") && (perfil.nuevoUsuario.trim() != "")
+        && (perfil.email.trim() != "") && (perfil.nuevaContraseña.trim() != ""))){
+       
+            localStorage.setItem('usuario', JSON.stringify(perfil)); 
+            alert("Se ha registrado exitosamente, por favor, inicie sesion"); 
+             }else{
+                alert("Por favor, complete los campos requeridos");
+            } 
+         
+    };
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+    let perfil = JSON.parse(localStorage.getItem('usuario'));
+   
+    if (perfil != null){
+  
+        document.getElementById('name').value = perfil.nombre;
+        document.getElementById("newUser").value= perfil.nuevoUsuario;
+        document.getElementById("mail").value = perfil.email;
+        document.getElementById("newPsw").value = perfil.nuevacontrasena;
+        document.getElementById("psw").value = perfil.contraseña;
+        document.getElementById("user").value = perfil.usuario;
+    } 
+});
+    function complete(){
+    
+        itemObject = [];
+
+        perfil.nuevoUsuario = document.getElementById("newUser").value;
+        perfil.contraseña = document.getElementById("psw").value;
+        itemObject.push(perfil);
+        localStorage.setItem('usuario', JSON.stringify(perfil));
+
+        if(perfil.contraseña===perfil.nuevaContraseña & perfil.usuario===perfil.nuevoUsuario){
+            window.location = "index.html";
+        }else{ window.location = "login.html";
+        alert("El nombre de usuario o contrasena son incorrectos");
+        }
+    }
+      
+      
+
+    
+    
     function logout(){
-        localStorage.removeItem("usuario");
-        localStorage.removeItem("contraseña");
+        localStorage.removeItem("usuario",contraseña);
+    
     }
