@@ -39,22 +39,27 @@ function sendComments(array){
 
     for (let data of array){
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-        <div class="row">
-            <div class="col-1 d-flex align-items-center">
-                <img src='img/avataruser.jpg' class="img-thumbnail">
-            </div>
-            <div class="col-8">
-                <div class="d-flex w-100 justify-content-between">
-                    <div class="mb-3">
-                        <h6 class="font-weight-bold margin-score">${data.user} ${showScore(data.score)}</h6>
-                        <p>${data.description}</p>
-                    </div>
-                    <small class="text-muted">${data.dateTime}</small>
-                </div>
-            </div>
-        </div>
-    </div>
+                 <!-- Contenedor Principal -->
+	<div class="comments-container">
+  <ul id="comments-list" class="comments-list">
+    <li>
+      <div class="comment-main-level">
+        <!-- Avatar -->
+        <div class="comment-avatar"><img src="img/avataruser.jpg" alt=""></div>
+        <!-- Contenedor del Comentario -->
+        <div class="comment-box">
+          <div class="comment-head">
+            <h6 class="comment-name by-author"><a> ${data.user} ${showScore(data.score)}</a></h6>
+            <span>${data.dateTime}</span>
+            <i class="fa fa-reply"></i>
+            <i class="fa fa-heart"></i>
+          </div>
+          <div class="comment-content">
+          ${data.description}
+						</div>
+    </li>
+  </ul>
+</div>
         `
         document.getElementById("comments").innerHTML = htmlContentToAppend;
     }
@@ -117,10 +122,11 @@ function newComment(){
 	let comment = document.getElementById("newComment").value;
 	
 	let valueScore = document.getElementsByName("scores");
-	let dataName = localStorage.getItem("usuario");
+	let perfil = JSON.parse(localStorage.getItem('usuario'));
+  let name = perfil.nombre;
 	let newCommentData = {
 		"description": comment,
-		"user": dataName,
+		"user": name,
 		"dateTime": formatDate()
 	};
 

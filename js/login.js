@@ -65,21 +65,21 @@ document.addEventListener("DOMContentLoaded", function(e){
     window.addEventListener("resize",widthpage)
 });
 
-
-      function registro(){
+document.getElementById("valid").style.display="none";
+      
+function registro(){
         
         perfil.nombre = document.getElementById('name').value;
         perfil.nuevoUsuario = document.getElementById("newUser").value;
         perfil.email = document.getElementById("mail").value;
-        perfil.nuevaContraseña= document.getElementById("newPsw").value;
+        perfil.nuevaContrasena= document.getElementById("newPsw").value;
 
         if(((perfil.nombre.trim() != "") && (perfil.nuevoUsuario.trim() != "")
-        && (perfil.email.trim() != "") && (perfil.nuevaContraseña.trim() != ""))){
+        && (perfil.email.trim() != "") && (perfil.nuevaContrasena.trim() != ""))){
        
             localStorage.setItem('usuario', JSON.stringify(perfil)); 
-            alert("Se ha registrado exitosamente, por favor, inicie sesion"); 
              }else{
-                alert("Por favor, complete los campos requeridos");
+                document.getElementById("valid").style.display="block";
             } 
          
     };
@@ -90,35 +90,35 @@ document.addEventListener('DOMContentLoaded',()=>{
    
     if (perfil != null){
   
-        document.getElementById('name').value = perfil.nombre;
+        document.getElementById("name").value = perfil.nombre;
         document.getElementById("newUser").value= perfil.nuevoUsuario;
         document.getElementById("mail").value = perfil.email;
-        document.getElementById("newPsw").value = perfil.nuevacontrasena;
+        document.getElementById("newPsw").value = perfil.nuevaContrasena;
         document.getElementById("psw").value = perfil.contraseña;
         document.getElementById("user").value = perfil.usuario;
     } 
 });
+
+document.getElementById("validL").style.display="none";
+
     function complete(){
     
         itemObject = [];
 
-        perfil.nuevoUsuario = document.getElementById("newUser").value;
         perfil.contraseña = document.getElementById("psw").value;
+        perfil.usuario= document.getElementById("user").value;
+        registro();
+    
         itemObject.push(perfil);
         localStorage.setItem('usuario', JSON.stringify(perfil));
 
-        if(perfil.contraseña===perfil.nuevaContraseña & perfil.usuario===perfil.nuevoUsuario){
+        if(((perfil.nuevoUsuario.trim() === perfil.usuario.trim()) && (perfil.nuevaContrasena.trim()===perfil.contraseña.trim()))){
             window.location = "index.html";
-        }else{ window.location = "login.html";
-        alert("El nombre de usuario o contrasena son incorrectos");
-        }
-    }
-      
-      
-
+        }else{ window.location = "login.html" 
+         document.getElementById("validL").style.display="block";
+    }}
     
     
     function logout(){
-        localStorage.removeItem("usuario",contraseña);
-    
+        localStorage.removeItem(usuario);
     }

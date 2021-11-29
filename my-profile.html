@@ -62,8 +62,8 @@
 }
 
 .bg-c-lite-green {
-    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-    background: linear-gradient(to right, #ee5a6f, #f29263)
+    background: -webkit-gradient(linear, left top, right top, from(#abded7), to(#4d8680));
+    background: linear-gradient(to right, #4d8680, #abded7)
 }
 
 .user-profile {
@@ -207,9 +207,9 @@ input{
     margin-top: 10px;
     padding: 5px;
     border: none;
-    background: #eee7df;
+    background: #d3dfda;
     font-size: 16px;
-    outline-color: #dbcbbe;
+    outline-color: #d3dfda;
 }
 
 
@@ -245,7 +245,7 @@ input{
                           <div class="col-sm-4 bg-c-lite-green user-profile">
                               <div class="card-block text-center text-white">
                                 <input type="file" onchange="upload()" placeholder="" id="upload"><br>
-                                  <div class="m-b-25"> <img id="pic" src="" height="100" class="img-radius" alt="User-Profile-Image"> </div>
+                                  <div class="m-b-25"> <img id="pic" src="" height="120" class="img-radius" alt="User-Profile-Image"> </div>
                                   <div id="content"></div>
                                   <h6 class="f-w-600" id="name"></h6>
                                   <input type="text" id="newNameInput" placeholder="Nombre Completo">
@@ -264,7 +264,7 @@ input{
                                           <input type="text" id="mailInput">
                                       </div>
                                       <div class="col-sm-6">
-                                          <p class="m-b-10 f-w-600">Contacto</p>
+                                          <p id="contactT" class="m-b-10 f-w-600">Contacto</p>
                                           <input type="text" id="contactInput" /> 
                                           <h6 class="text-muted f-w-400" id="contact"></h6>
                                       </div>
@@ -272,7 +272,7 @@ input{
                                   <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
                                   <div class="row">
                                       <div class="col-sm-6">
-                                          <p class="m-b-10 f-w-600">Edad</p>
+                                          <p id="ageT" class="m-b-10 f-w-600">Edad</p>
                                          <input type="text" id="ageInput">
                                           <h6 class="text-muted f-w-400" id="age"></h6>
                                       </div>
@@ -292,9 +292,7 @@ input{
                                         <div class="row container d-flex justify-content-center"> <button type="button" id="animatebutton" class="btn btn-success btn-icon-text animatebutton" onclick="showHiddenInput()" > <i class="fa fa-check btn-icon-prepend"></i> Editar Perfil </button> </div>
                                     </div>
                                     <div class="page-content page-container" id="page-content">
-                                        <div class="padding">
-                                            <div class="row container d-flex justify-content-center"> <button type="button" id="saveDataButton" class="btn btn-success btn-icon-text animatebutton" onclick="" > <i class="fa fa-check btn-icon-prepend"></i> Guardar Datos </button> </div>
-                                        </div>
+                              <div class="row container d-flex justify-content-center"> <button type="button" id="saveDataButton" class="btn btn-success btn-icon-text animatebutton" onclick="" > <i class="fa fa-check btn-icon-prepend"></i> Guardar Datos </button> </div>
                                 </div>
                               </div>
                           </div>

@@ -58,21 +58,18 @@ for (let index = 0; index < array.length; index++) {
                 description.toLowerCase().indexOf(search) != -1) {
 
     contenido +=`
-    <a href="product-info.html" class="list-group-item list-group-item-action">
-        <div class="row">
-            <div class="col-3">
-                <img src="` + img+ `" alt="` + description + `" class="img-thumbnail">
-            </div>
-            <div class="col">
-                <div class="d-flex w-100 justify-content-between">
-                    <h4 class="mb-1">`+ name +`</h4>
-                    <small class="text-muted">` + sc + ` artículos vendidos</small>
+    <div class="col-md-4 col-lg-3">
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img src="${img}" class="card-img-top" alt="${description}">
+                <div class="card-body">
+                    <h3 class="mb-3">${name}</h3>
+                        <h6 class="card-subtitle mb-2 text-muted">${cost} ${currency}</h6>
+                            <p class="card-text">
+                                ${description}
+                             </p>
                 </div>
-                <p class="mb-1">` + description + `</p>
-                <p class="mb-1">`+"Costo:"+ " " + cost +" "+ currency + `</p>
-            </div>
+            </a>
         </div>
-    </a>
     `
 }}
 }

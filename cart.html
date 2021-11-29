@@ -4,10 +4,12 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -93,6 +95,740 @@ table img{
 input{
   width:45px;
 }
+
+.form-control:focus {
+    box-shadow: 10px 0px 0px 0px #ffffff !important;
+    border-color: #4ca746
+}
+
+body {
+	background: #eee;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;	
+}
+
+#site-header, #site-footer {
+	background: #fff;
+}
+
+#site-header {
+	margin: 0 0 30px 0;
+}
+
+#site-header h1 {
+	font-size: 31px;
+	font-weight: 300;
+	padding: 40px 0;
+	position: relative;
+	margin: 0;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+
+	-webkit-transition: color .2s linear;
+	-moz-transition: color .2s linear;
+	-ms-transition: color .2s linear;
+	-o-transition: color .2s linear;
+	transition: color .2s linear;
+}
+
+a:hover {
+	color: #53b5aa;
+}
+
+#site-header h1 span {
+	color: #53b5aa;
+}
+
+#site-header h1 span.last-span {
+	background: #fff;
+	padding-right: 150px;
+	position: absolute;
+	left: 217px;
+
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+#site-header h1:hover span.last-span, #site-header h1 span.is-open {
+	left: 363px;
+}
+
+#site-header h1 em {
+	font-size: 16px;
+	font-style: normal;
+	vertical-align: middle;
+}
+
+.container {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0 auto;
+	width: 980px;
+}
+
+#cart {
+	width: 100%;
+}
+
+#cart h1 {
+	font-weight: 300;
+}
+
+#cart a {
+	color: #53b5aa;
+	text-decoration: none;
+
+	-webkit-transition: color .2s linear;
+	-moz-transition: color .2s linear;
+	-ms-transition: color .2s linear;
+	-o-transition: color .2s linear;
+	transition: color .2s linear;
+}
+
+#cart a:hover {
+	color: #000;
+}
+
+.product.removed {
+	margin-left: 980px !important;
+	opacity: 0;
+}
+
+.product {
+	border: 1px solid #eee;
+	margin: 20px 0;
+	width: 100%;
+	height: 195px;
+	position: relative;
+
+	-webkit-transition: margin .2s linear, opacity .2s linear;
+	-moz-transition: margin .2s linear, opacity .2s linear;
+	-ms-transition: margin .2s linear, opacity .2s linear;
+	-o-transition: margin .2s linear, opacity .2s linear;
+	transition: margin .2s linear, opacity .2s linear;
+}
+
+.product img {
+	width: 100%;
+	height: 100%;
+}
+
+.product header, .product .content {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-style: none none solid none;
+	float: left;
+}
+
+.product header {
+	background: #000;
+	margin: 0 1% 20px 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 24%;
+	height: 195px;
+}
+
+.product header:hover img {
+	opacity: .7;
+}
+
+.product header:hover h3 {
+	bottom: 73px;
+}
+
+.product header h3 {
+	background: #53b5aa;
+	color: #fff;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 49px;
+	margin: 0;
+	padding: 0 30px;
+	position: absolute;
+	bottom: -50px;
+	right: 0;
+	left: 0;
+
+	-webkit-transition: bottom .2s linear;
+	-moz-transition: bottom .2s linear;
+	-ms-transition: bottom .2s linear;
+	-o-transition: bottom .2s linear;
+	transition: bottom .2s linear;
+}
+
+.remove {
+	cursor: pointer;
+}
+
+.product .content {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 140px;
+	padding: 0 20px;
+	width: 75%;
+}
+
+.product h1 {
+	color: #53b5aa;
+	font-size: 25px;
+	font-weight: 300;
+	margin: 17px 0 20px 0;
+}
+
+.product footer.content {
+	height: 50px;
+	margin: 6px 0 0 0;
+	padding: 0;
+}
+
+.product footer .price {
+	background: #fcfcfc;
+	color: #000;
+	float: right;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 49px;
+	margin: 0;
+	padding: 0 30px;
+}
+
+.product footer .full-price {
+	background: #53b5aa;
+	color: #fff;
+	float: right;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 49px;
+	margin: 0;
+	padding: 0 30px;
+
+	-webkit-transition: margin .15s linear;
+	-moz-transition: margin .15s linear;
+	-ms-transition: margin .15s linear;
+	-o-transition: margin .15s linear;
+	transition: margin .15s linear;
+}
+
+.qt, .qt-plus, .qt-minus {
+	display: block;
+	float: left;
+}
+
+.qt {
+	font-size: 19px;
+	line-height: 50px;
+	width: 70px;
+	text-align: center;
+}
+
+.qt-plus, .qt-minus {
+	background: #fcfcfc;
+	border: none;
+	font-size: 30px;
+	font-weight: 300;
+	height: 100%;
+	padding: 0 20px;
+	-webkit-transition: background .2s linear;
+	-moz-transition: background .2s linear;
+	-ms-transition: background .2s linear;
+	-o-transition: background .2s linear;
+	transition: background .2s linear;
+}
+
+.qt-plus:hover, .qt-minus:hover {
+	background: #53b5aa;
+	color: #fff;
+	cursor: pointer;
+}
+
+.qt-plus {
+	line-height: 50px;
+}
+
+.qt-minus {
+	line-height: 47px;
+}
+
+#site-footer {
+	margin: 30px 0 0 0;
+}
+
+#site-footer {
+	padding: 40px;
+}
+
+#site-footer h1 {
+	background: #fcfcfc;
+	border: 1px solid #ccc;
+	border-style: none none solid none;
+	font-size: 24px;
+	font-weight: 300;
+	margin: 0 0 7px 0;
+	padding: 14px 40px;
+	text-align: center;
+}
+
+#site-footer h2 {
+	font-size: 24px;
+	font-weight: 300;
+	margin: 10px 0 0 0;
+}
+
+#site-footer h3 {
+	font-size: 19px;
+	font-weight: 300;
+	margin: 15px 0;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.btn {
+	background: #53b5aa;
+	border: 1px solid #999;
+	border-style: none none solid none;
+	cursor: pointer;
+	display: block;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 300;
+	padding: 16px 0;
+	width: 290px;
+	text-align: center;
+
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+.btn:hover {
+	color: #fff;
+	background: #429188;
+}
+
+.type {
+	background: #fcfcfc;
+	font-size: 13px;
+	padding: 10px 16px;
+	left: 100%;
+}
+
+.type, .color {
+	border: 1px solid #ccc;
+	border-style: none none solid none;
+	position: absolute;
+}
+
+.color {
+	width: 40px;
+	height: 40px;
+	right: -40px;
+}
+
+.red {
+	background: #cb5a5e;
+}
+
+.yellow {
+	background: #f1c40f;
+}
+
+.blue {
+	background: #3598dc;
+}
+
+.minused {
+	margin: 0 50px 0 0 !important;
+}
+
+.added {
+	margin: 0 -50px 0 0 !important;
+}
+/*
+Inspired by the dribble shot http://dribbble.com/shots/1285240-Freebie-Flat-Pricing-Table?list=tags&tag=pricing_table
+*/
+
+
+/*--------- Font ------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/*------ utiltity classes -----*/
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+
+/*its also known as clearfix*/
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  zoom: 1;
+  /*For IE 6/7 (trigger hasLayout) */
+}
+
+body {
+  background: #F2F2F2;
+  font-family: 'Droid Sans', sans-serif;
+  line-height: 1;
+  font-size: 26px;
+}
+
+
+.pricing-table {
+  width: 40%;
+  margin: 10px 50px;
+  text-align: center;
+  /*padding: 10px;
+    padding-right: 0;*/
+}
+
+.pricing-table .heading {
+  color: black;
+  text-transform:uppercase;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.block {
+  width: 30%;
+  margin: 0 1%;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /*    border: 1px solid red;*/
+}
+
+
+/*Shared properties*/
+
+.title,
+.pt-footer {
+  color: #FEFEFE;
+  text-transform: capitalize;
+  line-height: 2.5;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  color: #000000;
+  padding: 13px 0 10px 0;
+}
+
+
+/*arrow creation*/
+
+.content:after,
+.content:before,
+.pt-footer:before,
+.pt-footer:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.pt-footer:after,
+.pt-footer:before {
+  top: 0;
+}
+
+.content:after,
+.pt-footer:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-width: 6px;
+  margin-left: -5px;
+}
+
+
+/*/arrow creation*/
+
+.price {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.70rem;
+}
+
+.price span {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight:lighter;
+}
+
+.price h2 {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight:lighter;
+}
+
+.price sup {
+  font-size: 3rem;
+  top: 10px;
+  
+}
+
+.hint {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.features {
+  list-style-type: none;
+  background: #FFFFFF;
+  text-align: left;
+  color: #9C9C9C;
+  padding: 15px 25%;
+  font-size: 1.2rem;
+}
+
+.features li {
+  padding: 14px 0;
+  width: 100%;
+}
+
+.features li span {
+  padding-right: 1.5rem;
+}
+
+.pt-footer {
+  font-size: 2.0rem;
+  text-transform: Bold;
+}
+
+
+/*PERSONAL*/
+
+.personal .title {
+  background: #b0988e;
+}
+
+.personal .content,
+.personal .pt-footer {
+  background: #b0988e;
+}
+
+.personal .content:after {
+  border-top-color: #b0988e;
+}
+
+.personal .pt-footer:after {
+  border-top-color: #FFFFFF;
+}
+
+
+/*PROFESSIONAL*/
+
+.professional .title {
+  background: #b0988e;
+}
+
+.professional .content,
+.professional .pt-footer {
+  background: #b0988e;
+}
+
+.professional .content:after {
+  border-top-color: #FFFFFF;
+}
+
+.professional .pt-footer:after {
+  border-top-color: #FFFFFF;
+}
+
+
+/*BUSINESS*/
+
+.business .title {
+  background: #b0988e;
+}
+
+.business .content,
+.business .pt-footer {
+  background: #b0988e;
+}
+
+.business .content:after {
+  border-top-color: #b0988e;
+}
+
+.business .pt-footer:after {
+  border-top-color: #FFFFFF;
+}
+
+@import url("https://rsms.me/inter/inter.css");
+
+:root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 2rem 0;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: .5rem;
+  border-radius: .25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #000;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+.button:focus-visible {
+  background-color: #333;
+}
+
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -116,36 +852,41 @@ input{
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <hr class="mb-6">
-        <h1 class="page-header">Mi carrito</h1>
-      </div>
+  <header id="site-header">
+    <div class="container">
+    <h1 class="animate__pulse animate__animated">Mis Compras</h1>
     </div>
-    <div class="row">
-      <div class="col-lg-8 mb-4">
-        <form id="cart-update-form" method="post" action="/cart/update">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Producto</th>
-                  <th class="mob-hide">Imagen</th>
-                  <th class="mob-hide">Precio Unitario</th>
-                  <th class="table-qty">Cantidad</th>
-                  <th>Subtotal</th>
-                  <th class="mob-hide"></th>
-                </tr>
-              </thead>
-              <tbody id="cartProducts">
-              </tbody>
-              </table>
-            </div>
-            </div>
-            </div>
+  </header>
+  
+  
+  <div class="container" id="cartProducts">
+ 
+   
+  </div>
+  
+  <footer id="site-footer">
+    <div class="container clearfix">
+  
+        <div class="left">
+            <h2 class="subtotal">Subtotal: $ <span id="sub"></span></h2>
+            <h3 class="tax">I.V.A (22%):$ <span id="iva"></span></h3>
+            <h3 class="shipping">Costo de envio: $ <span id="envio"></span></h3>
+        </div>
+  
+        <div class="right">
+            <h1 class="total">Total: $ <span id="total"></span></h1>
+            <a class="btn" onclick="checkOut()">Finalizar Compra</a>
+                   
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#staticBackdrop">
+  Método de Pago
+</button>
+</div>
+        </div>
+  
+    
+  </footer>
 
-            
 
 <td class="text-right">
   <a href="" class="cart-product-remove" title="eliminar">
@@ -157,94 +898,241 @@ input{
 </table>
 <input type="hidden">
 </form>
-<hr class="mb-4">
-<h5>Tipo de Envio</h5>
-<div class="d-block my-3">
-<div class="custom-control custom-radio"> 
-<input onchange="shipping()"  id="premium" name="shipType" class="custom-control-input" type="radio"  required>
-<label class="custom-control-label" for="premium">
-Premium 2-5 días (15%)
-</label>
+
+<body>
+  <div class="wrapper">
+      <div class="float-right">
+        <h1>Dirección de Envio</h1>
+        <p>Ingrese los detalles de envio</p>
+        <hr />
+        <form class="was-validated">
+        <div class="form"> 
+        <div class="fields fields--2">
+          <label class="field">
+            <span class="field__label" for="firstname">Nombre</span>
+            <input  class="field__input form-control" type="text" id="firstname" required />
+          </label>
+          <label class="field">
+            <span class="field__label" for="lastname">Apellido</span>
+            <input class="field__input form-control" type="text" id="lastname" required />
+          </label>
+        </div>
+        <label class="field">
+          <span class="field__label" for="address">Calle</span>
+          <input class="field__input form-control" type="text" id="address" required />
+        </label>
+        <label class="field">
+          <span class="field__label" for="country">Pais</span>
+          <select class="field__input form-control" id="country" required>
+            <option value=""></option>
+            <option value="1">Alemania</option>
+            <option value="2">Argentina</option>
+            <option value="2">Guatemala</option>
+            <option value="2">Perú</option>
+            <option value="2">Reino Unido</option>
+            <option value="2">Bélgica</option>
+            <option value="2">Japón</option>
+            <option value="2">China</option>
+            <option value="2">Uruguay</option>
+            <option value="2">Nueva Zelanda</option>
+            <option value="2">Zambia</option>
+          </select>
+        </label>
+        <div class="fields fields--3">
+          <label class="field">
+            <span class="field__label" for="zipcode">Numero de puerta</span>
+            <input class="field__input form-control" type="text" id="zipcode" required />
+          </label>
+          <label class="field">
+            <span class="field__label" for="city">Ciudad</span>
+            <input class="field__input form-control" type="text" id="city" required />
+          </label>
+          <label class="field">
+            <span class="field__label" for="state">Codigo Postal</span>
+            <input class="field__input form-control" id="state" required/>
+            </select>
+          </label>
+        </form>
+        </div>
+        </div>
+      </div>
+    <!-- PRICING-TABLE CONTAINER -->
+    <div class="pricing-table group">
+      <!-- PERSONAL -->
+      <div class="block personal fl">
+        <h2 class="title">Premium</h2>
+        <!-- CONTENT -->
+        <div class="content">
+          <p class="price">
+            <sup>15</sup>
+            <span>%</span>
+            <sub>/kg</sub>
+        </div>
+        <!-- /CONTENT -->
+        <!-- FEATURES -->
+        <ul class="features">
+          <li><span class="fontawesome-cog"></span>2-5 días</li>
+        </ul>
+        <!-- /FEATURES -->
+        <!-- PT-FOOTER -->
+        <div class="pt-footer">
+          <input onchange="shipping()"  id="premium" name="shipType" type="radio"  required >✓
+        </div>
+        <!-- /PT-FOOTER -->
+      </div>
+      <!-- /PERSONAL -->
+      <!-- PROFESSIONAL -->
+      <div class="block professional fl">
+        <h2 class="title">Express</h2>
+        <!-- CONTENT -->
+        <div class="content">
+          <p class="price">
+            <sup>7</sup>
+            <span>%</span>
+            <sub>/kg</sub>
+        </div>
+        <!-- /CONTENT -->
+        <!-- FEATURES -->
+        <ul class="features">
+          <li><span class="fontawesome-cog"></span>5-8 días</li>
+        </ul>
+        <!-- /FEATURES -->
+        <!-- PT-FOOTER -->
+        <div class="pt-footer">
+          <input onchange="shipping()"   id="express" name="shipType" type="radio"  required>✓
+        </div>
+        <!-- /PT-FOOTER -->
+      </div>
+      <!-- /PROFESSIONAL -->
+      <!-- BUSINESS -->
+      <div class="block business fl">
+        <h2 class="title">Standard</h2>
+        <!-- CONTENT -->
+        <div class="content">
+          <p class="price">
+            <sup>5</sup>
+            <span>%</span>
+            <sub>/kg</sub>
+        </div>
+        <!-- /CONTENT -->
+
+        <!-- FEATURES -->
+        <ul class="features">
+          <li><span class="fontawesome-cog"></span>12 días</li>
+        </ul>
+        <!-- /FEATURES -->
+
+        <!-- PT-FOOTER -->
+        <div class="pt-footer">
+          <input onchange="shipping()"  id="standard" name="shipType" type="radio" checked>✓
+        </div>
+        <!-- /PT-FOOTER -->
+      </div>
+      <!-- /BUSINESS -->
+    </div>
+    <!-- /PRICING-TABLE -->
+  </div>
+</body>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Seleccione Método de Pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+<div class="padding">
+    <div class="row">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="col-sm-8 col-md-10">
+                <div class="card">
+                    <div class="card-header">
+
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" data-toggle="collapse" href="#tarjetaCredito" role="button">
+                        <label class="custom-control-label" for="customRadio1">Tarjeta de Debito o Credito</label>
+                      </div>
+            <div class="collapse" id="tarjetaCredito">
+              <div class="row">
+                <div class="col-md-6"> <span></span> </div>
+                <div class="col-md-6 text-right" style="margin-top: -5px;"> <img src="https://img.icons8.com/color/36/000000/visa.png"> <img src="https://img.icons8.com/color/36/000000/mastercard.png"> <img src="https://img.icons8.com/color/36/000000/amex.png"> </div>
+            </div>
+        <div class="card-body" style="height: 350px">
+          <form class="was-validated">
+            <div class="form-group"> <label for="cc-number" class="control-label">Numero de Tarjeta</label> <input id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required> </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group"> <label for="cc-exp" class="control-label">Fecha de expiracion</label> <input id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp" placeholder="•• / ••" required> </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group"> <label for="cc-cvc" class="control-label">CVV</label> <input id="cc-cvc" type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••" required> </div>
+                </div>
+            </div>
+            <div class="form-group"> <label for="numeric" class="control-label">Titular de la tarjeta</label> <input id="cc-t" type="text" class="input-lg form-control" required> </div>
+          </form>
+        </div>
+    </div>
 </div>
-<div class="custom-control custom-radio"> 
-<input onchange="shipping()"   id="express" name="shipType" class="custom-control-input" type="radio"  required>
-<label class="custom-control-label" for="express">
-Express 5-8 días (7%)
-</label>
 </div>
-<div class="custom-control custom-radio"> 
-<input onchange="shipping()"  id="standard" name="shipType" class="custom-control-input" type="radio" required>
-<label class="custom-control-label" for="standard">
-Standard 12-15 días (5%)
-</label>
-</div>
-<div class="row">
-<button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal"> Ver Condiciones </button>
 </div>
 </div>
 
-<div class="col-lg-4 mb-4">
-<div class="row">
-<div class="col-sm-12 col-md-12 cart-estimate">
-<div class="card mb-3">
- <div class="card-header">
-  <h2 class="card-title"> Direccion de Envio</h2>
-  <div class="row">
-    <div class="col-6">
-      <label for="direccion">Calle</label>
-      <input style="width: 150px;" type="text">
+  <div class="padding">
+    <div class="row">
+    <div class="container-fluid d-flex justify-content-center">
+    <div class="col-sm-8 col-md-10">
+      <div class="card">
+          <div class="card-header">
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input" data-toggle="collapse" href="#transferencia" role="button">
+              <label class="custom-control-label" for="customRadio2">Transferencia Bancaria</label>
+            </div>
+            <div class="collapse" id="transferencia">
+              <div class="row">
+                  <div class="col-md-6"></div>
+                  <div class="col-md-6 text-right" style="margin-top: -5px;">
+              </div>
+          </div>
+          <div class="card-body" style="height: 350px">
+            <form class="was-validated">
+              <div class="form-group"> <label for="cc-number" class="control-label">Numero de Cuenta</label> <input id="cc-number1" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required> </div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group"> <label for="cc-exp" class="control-label">Monto a Debitar</label> <input id="monto"class="input-lg form-control" type="text" required> </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group"> <label for="cc-cvc" class="control-label">Banco</label> <input id="banco" type="text" class="input-lg form-control" required> </div>
+                  </div>
+              </div>
+              <div class="form-group"> <label for="numeric" class="control-label">Titular de la cuenta</label> <input id="cc-t2" type="text" class="input-lg form-control" required> </div>
+            </form>
+          </div>
+      </div>
     </div>
-    <div class="col-3">
-      <label for="direccion">Numero</label>
-      <input  style="width: 100px;" type="text">
     </div>
-    <div class="col-6 mt-3">
-      <label for="direccion">Esquina</label>
-      <input style="width: 150px;" type="text">
     </div>
-    <div class="col-3 mt-3">
-      <label for="direccion">Pais</label>
-      <input style="width: 150px;" type="text">
+    </div>
+   </div>
+  </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+      </div>
     </div>
   </div>
- </div>
-</div>
-</div>
-</div>
 </div>
 
-<div class="col-12 cart-totals">
-<table class="table table-striped">
-<tbody>
-<tr class="totals">
- <td colspan="1" class="text-left">Costo de Envio</td>
- <td id="envio" colspan="1" class="text-right"></td>
-</tr>
-<tr class="totals">
-  <td colspan="1" class="text-left">Subtotal</td>
-  <td id="sub" colspan="1" class="text-right"></td>
- </tr>
-<tr class="totals key">
-<td colspan="1" class="text-left">
-  <span>Total</span>
-</td>
-<td id="total" colspan="1" class="text-right">
-  <strong></strong>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-  <div class="text-center cart-actions">
-    <a href="" class="btn btn-primary btn-block" title="Proceed to Checkout" data-for="at-external-link"> Finalizar Compra </a>
-    <a href="products.html" class="btn btn-link btn-block" title="← Continue Shopping"> Continuar Comprando </a>
-  </div>
 </div>
 </div>
-
+</div>
 <hr>
-<div class="container">
+<div class="container-xl">
 <footer>
  <div class="row"> 
    <div class="col-12 col-md-6 order-1 order-md-2">
@@ -286,6 +1174,8 @@ Standard 12-15 días (5%)
   <script src="js/cart.js"></script>
   <script src="js/user-validator.js"></script>
   <script src="js/login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+
 </body>
 
 </html>

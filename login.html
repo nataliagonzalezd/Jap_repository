@@ -18,6 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+ 
   <style>
     html, body{
       height: 100%;
@@ -215,15 +217,19 @@
         <h2>Iniciar Sesion</h2>
         <input id="user" type="text" placeholder="Nombre de Usuario" required>
         <input id="psw" type="password" placeholder="Contraseña" required>
+        <hr>
+        <p class="animate__flipInX animate__animated" id="validL">El nombre de usuario o contraseña son incorrectos</p>
         <button id="login" onclick="complete()" type="button" >Iniciar Sesion</button>
       </form>
       
-      <form class="form-register">
+      <form class="form-register was-validated">
         <h2>Registrarse</h2>
         <input id="name" type="text" placeholder="Nombre Completo">
         <input id="newUser" type="text" placeholder="Nombre de Usuario">
         <input id="mail" type="text" placeholder="Correo Electronico">
         <input id="newPsw" type="password" placeholder="Nueva Contraseña">
+        <hr>
+        <p class="animate__flipInX animate__animated" id="valid" >Por favor, complete todos los campos requeridos</p>
         <button id="register" onclick="registro()" type="button">Registrarse</button>
       </form>
       

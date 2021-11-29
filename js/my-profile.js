@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("saveDataButton").style.display="block";
     document.getElementById("newNameInput").style.display="block";
     document.getElementById("upload").style.display="block";
+    document.getElementById("ageT").style.display="block";
+    document.getElementById("contactT").style.display="block";
 }
 
 function upload() {
@@ -78,7 +80,6 @@ document.getElementById("saveDataButton").addEventListener("click", function(){
   perfil.imagen = preview.src
 
   localStorage.setItem('usuario', JSON.stringify(perfil));
-  alert ( "Perfil guardado")
   window.location = "my-profile.html";
 });
 
@@ -101,5 +102,32 @@ document.addEventListener('DOMContentLoaded',()=>{
     preview.src = "img/avatar.png";
   }
  
+  function hide(){
+   document.getElementById("ageInput").value= perfil.edad;
+   document.getElementById("contactInput").value= perfil.contacto;
+   document.getElementById("ocupationInput").value= perfil.ocupacion;
+
+   if ((perfil.edad === undefined) || (perfil.contacto === undefined) || (perfil.ocupacion === undefined)) {
+    document.getElementById("age").style.display="none";
+    document.getElementById("contact").style.display="none";
+    document.getElementById("ocupation").style.display="none";
+    document.getElementById("ageT").style.display="none";
+    document.getElementById("contactT").style.display="none";
+    document.getElementById("ageInput").value= "";
+    document.getElementById("contactInput").value= "";
+    document.getElementById("ocupationInput").value= "";
+
+   }else{
+    document.getElementById("ageT").style.display="block";
+    document.getElementById("contactT").style.display="block";
+    document.getElementById("age").style.display="block";
+    document.getElementById("contact").style.display="block";
+    document.getElementById("ocupation").style.display="block";
+  }
+
+  }
+   
+  hide();
+  
 
 })
